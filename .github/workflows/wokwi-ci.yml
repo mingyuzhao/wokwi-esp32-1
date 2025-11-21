@@ -27,7 +27,7 @@ jobs:
 
       - name: Install Wokwi CLI
         run: |
-          curl -s https://wokwi.com/ci/install.sh | sh
+          curl -L https://wokwi.com/ci/install.sh | sh
 
       - name: Run Wokwi Simulation
         run: |
