@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install PlatformIO
-        uses: uses: platformio/action@v1
+        uses: platformio/action@v1
 
       - name: Build firmware
         run: pio run
