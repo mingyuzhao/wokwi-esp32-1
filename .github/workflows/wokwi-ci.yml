@@ -31,6 +31,6 @@ jobs:
 
       - name: Run Wokwi Simulation
         run: |
-          wokwi-cli . --firmware .pio/build/esp32dev/firmware.elf
+          wokwi-cli . --elf .pio/build/esp32dev/firmware.elf --scenario test-sim.json --timeout 20000
         env:
           WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
