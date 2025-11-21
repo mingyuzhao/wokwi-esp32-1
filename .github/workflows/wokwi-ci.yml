@@ -30,5 +30,6 @@ jobs:
           curl -L https://wokwi.com/ci/install.sh | sh
 
       - name: Run Wokwi Simulation
-        run: |
-          wokwi-cli .
+        run: wokwi-cli .
+        env:
+          WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
