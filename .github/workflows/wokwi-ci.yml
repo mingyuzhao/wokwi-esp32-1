@@ -29,6 +29,11 @@ jobs:
         run: |
           curl -L https://wokwi.com/ci/install.sh | sh
 
+      - name: Debug wokwi.toml
+        run: |
+          sed -n '1p' wokwi.toml | sed 's/./& /g'
+          cat -A wokwi.toml
+
       - name: Run Wokwi Simulation
         run: |
           wokwi-cli . --elf .pio/build/esp32dev/firmware.elf --timeout 20000
