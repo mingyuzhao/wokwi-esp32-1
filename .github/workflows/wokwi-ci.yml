@@ -29,6 +29,10 @@ jobs:
         run: |
           curl -L https://wokwi.com/ci/install.sh | sh
 
+      - name: Debug wokwi.toml bytes
+        run: |
+          xxd -g 1 -l 80 wokwi.toml || true
+
       - name: Debug wokwi.toml
         run: |
           sed -n '1p' wokwi.toml | sed 's/./& /g'
