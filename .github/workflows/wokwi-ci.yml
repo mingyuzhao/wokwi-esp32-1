@@ -25,8 +25,11 @@ jobs:
       - name: Build firmware
         run: pio run
 
-      - name: Install latest Wokwi CLI
-        run: npm install -g @wokwi/cli
+      - name: Install Wokwi CLI (latest)
+        run: |
+          wget -q https://github.com/wokwi/wokwi-cli/releases/latest/download/wokwi-cli-linux-static
+          mv wokwi-cli-linux-static /usr/local/bin/wokwi
+          chmod +x /usr/local/bin/wokwi
 
       - name: Wokwi version
         run: wokwi --version
